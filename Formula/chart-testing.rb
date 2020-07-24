@@ -12,10 +12,10 @@ class ChartTesting < Formula
 
   def install
     bin.install "ct"
-    etc.install "etc" => "ct" unless File.exists? etc/"ct"
+    etc.install "etc" => "ct"
   end
 
   test do
-    system "#{bin}/ct --version"
+    system "#{bin}/ct version"
   end
 end
