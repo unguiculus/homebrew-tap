@@ -13,7 +13,7 @@ class ChartTesting < Formula
   def install
     bin.install "ct"
     system "mkdir -p HOME/.ct"
-    system "ln -s #{prefix}/etc $HOME/.ct"
+    system "ln -s #{prefix}/etc #{Dir.home}/.ct"
   end
 
   test do
