@@ -12,6 +12,8 @@ class ChartTesting < Formula
 
   def install
     bin.install "ct"
+    Dir.home/".ct".mkpath unless Dir.exists? Dir.home/".ct"
+    prefix.install_symlink prefix/"etc" => Dir.home/".ct"
   end
 
   test do
