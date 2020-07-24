@@ -12,9 +12,7 @@ class ChartTesting < Formula
 
   def install
     bin.install "ct"
-    system "echo ~"
-    system "mkdir -p ~/.ct"
-    system "ln -s #{prefix}/etc ~/.ct"
+    etc.install "etc" => "ct" unless File.exists? etc/"ct"
   end
 
   test do
